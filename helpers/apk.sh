@@ -13,21 +13,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# Gets the Alpine Package Keeper (APK) version for the specified version of
-# Alpine Linux.
-# Globals:
-#     PIEMAN_UTILS_DIR
-#     PYTHON
-# Arguments:
-#     Version of Alpine Linux
-# Returns:
-#     Alpine Package Keeper version
-get_apk_tools_version() {
-    local alpine_version=$1
-
-    "${PYTHON}" "${PIEMAN_UTILS_DIR}"/apk_tools_version.py --alpine-version="${alpine_version}"
-}
-
 # Runs apk.static to build a chroot environment.
 # Globals:
 #     BASE_PACKAGES

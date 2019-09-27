@@ -125,7 +125,7 @@ def_bool_var SUDO_REQUIRE_PASSWORD true
 
 def_var TIME_ZONE "Etc/UTC"
 
-def_var TOOLSET_CODENAME "v2-hermes"
+def_var TOOLSET_CODENAME "v4-farnsworth"
 
 def_var TOOLSET_DIR "${PIEMAN_DIR}/toolset"
 
@@ -241,6 +241,9 @@ info "checking toolset ${TOOLSET_CODENAME}"
 if [ ! -d "${TOOLSET_FULL_PATH}" ]; then
     info "building toolset ${TOOLSET_CODENAME} since it does not exist"
 fi
+
+run_preprocessor_against_toolset_yml
+
 . toolset.sh
 
 # shellcheck source=./pieman/pieman/build_status_codes
